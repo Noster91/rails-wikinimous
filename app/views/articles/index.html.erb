@@ -5,11 +5,12 @@
     <p> Here you will find articles, you can also click on them to edit or delete them</p>
     <ul class="list-group list-group-flush">
       <% @articles.each do |article| %>
-        <li class="list-group-item d-flex justify-content-left align-items-center shadow">
+        <li class="list-group-item d-flex justify-content-between align-items-center shadow">
           <p class="ml-3 my-auto ">
             <%= link_to article.title, article_path(article) %>
             <%= " - " + article.content %>
           </p>
+          <p> <%= '<i class="fa-solid fa-star" ></i>'.html_safe * article.rating.to_i %> </p>
         </li>
       <% end %>
       <p><%= link_to '<i class="fa-solid fa-circle-plus"></i> Create a new Article'.html_safe, new_article_path, :class => "btn btn-primary m-2 shadow" %> </p>
