@@ -1,0 +1,18 @@
+<%= render 'articles_navbar' %>
+<div class="container">
+  <div class="row">
+    <h1>List of Articles</h1>
+    <p> Here you will find articles and their actual status, you can also click on them to edit or delete them</p>
+    <ul class="list-group list-group-flush">
+      <% @articles.each do |article| %>
+        <li class="list-group-item d-flex justify-content-left align-items-center">
+          <p class="ml-3 my-auto">
+            <%= link_to article.title, article_path(article) %>
+            <%= " - " + article.content %>
+          </p>
+        </li>
+      <% end %>
+      <p><%= link_to '<i class="fa-solid fa-circle-plus"></i> Create a new Article'.html_safe, new_article_path, :class => "btn btn-primary m-2" %> </p>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="d-flex container-fluid justify-content-between border-bottom border-light">
+    <div class="navbar-header container-fluid d-flex justify-content-between">
+      <%= link_to 'Wikinimous', articles_path, :class => "m-2 navbar-brand" %>
+      <%= link_to '<i class="fa-solid fa-circle-plus"></i> Create a new Article'.html_safe, new_article_path, :class => "btn btn-primary m-2 align-left" %>
+    </div>
+  </div>
+</nav>
